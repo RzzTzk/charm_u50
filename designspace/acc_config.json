@@ -1,0 +1,18 @@
+{
+    "accelerators": [
+        {
+            "type": "large",
+            "tile": [256, 256, 128],
+            "dsp": 3072,
+            "hbm_channels": 16,
+            "slr": 0
+        },
+        {
+            "type": "small",
+            "tile": [64, 64, 64],
+            "dsp": 512,
+            "hbm_channels": 8,
+            "slr": 1
+        }
+    ]
+}

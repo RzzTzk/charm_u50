@@ -1,0 +1,4 @@
+[
+    {"name": "bert_layer1", "M": 3072, "K": 1024, "N": 1024, "acc": "large"},
+    {"name": "bert_layer2", "M": 512, "K": 512, "N": 64, "acc": "small"}
+]
