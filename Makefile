@@ -1,86 +1,102 @@
-# Makefile for CHARM Alveo U50 Project
-# Usage: 
-#   make all      - Compile everything (default)
-#   make xclbin   - Only generate mm_accel.xclbin
-#   make host     - Only compile host program
+# Makefile for CHARM Alveo U50 Project (Full Version)
+# Usage:
+#   make all      - Build everything (default)
+#   make xclbin   - Build only hardware accelerators
+#   make host     - Build only host program
 #   make clean    - Remove all generated files
+#   make run      - Run the executable (after building)
 
-# --- 配置区域 ---
-# 平台设置
-PLATFORM      := xilinx_u50_gen3x16_xdma_5_202210_1
-XCLBIN_NAME   := mm_accel.xclbin
-HOST_EXEC     := host_executable
+# --- Project Configuration ---
+PROJECT      := charm_u50
+PLATFORM     := xilinx_u50_gen3x16_xdma_5_202210_1
+XCLBIN       := build/mm_accel.xclbin
+HOST_EXE     := build/host_exec
 
-# 目录结构
-KERNEL_DIR    := kernels
-HOST_DIR      := host
-SCRIPT_DIR    := scripts
-BUILD_DIR     := build
-DESIGN_DIR    := design_space
+# --- Directory Structure ---
+KERNEL_DIR   := kernels
+HOST_DIR     := host
+INCLUDE_DIR  := include
+SCRIPT_DIR   := scripts
+BUILD_DIR    := build
+REPORT_DIR   := reports
 
-# Vitis/V++ 工具链
-VPP           := v++
-GCC           := g++
-CLFLAGS       := -lopencl -lxrt_core
+# --- Toolchain ---
+VPP          := v++
+GXX          := g++
+CLFLAGS      := -lOpenCL -lxrt_core
+VPP_FLAGS    := -t hw --platform $(PLATFORM) --save-temps
 
-# --- 自动生成文件列表 ---
-KERNEL_SRCS   := $(wildcard $(KERNEL_DIR)/mm_*.cpp)
-KERNEL_OBJS   := $(patsubst $(KERNEL_DIR)/%.cpp,$(BUILD_DIR)/%.xo,$(KERNEL_SRCS))
-HOST_SRCS     := $(wildcard $(HOST_DIR)/*.cpp)
-HOST_OBJS     := $(patsubst $(HOST_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(HOST_SRCS))
+# --- File Discovery ---
+KERNEL_SRCS  := $(wildcard $(KERNEL_DIR)/mm_*.cpp)
+KERNEL_OBJS  := $(patsubst $(KERNEL_DIR)/%.cpp,$(BUILD_DIR)/%.xo,$(KERNEL_SRCS))
+HOST_SRCS    := $(wildcard $(HOST_DIR)/*.cpp)
+HOST_OBJS    := $(patsubst $(HOST_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(HOST_SRCS))
 
-# --- 主目标 ---
-all: $(BUILD_DIR)/$(XCLBIN_NAME) $(BUILD_DIR)/$(HOST_EXEC)
+# --- Build Targets ---
+all: $(XCLBIN) $(HOST_EXE)
 
-# --- XCLBIN 生成规则 ---
-$(BUILD_DIR)/$(XCLBIN_NAME): $(KERNEL_OBJS)
+xclbin: $(XCLBIN)
+
+host: $(HOST_EXE)
+
+run: $(HOST_EXE) $(XCLBIN)
+	@echo "Running program..."
+	@cd $(BUILD_DIR) && ./$(notdir $(HOST_EXE)) $(notdir $(XCLBIN))
+
+# --- XCLBIN Generation ---
+$(XCLBIN): $(KERNEL_OBJS)
 	@echo "Linking XCLBIN..."
-	@mkdir -p $(@D)
-	$(VPP) -l -t hw --platform $(PLATFORM) \
+	@mkdir -p $(BUILD_DIR) $(REPORT_DIR)
+	$(VPP) $(VPP_FLAGS) -l \
 		--config $(SCRIPT_DIR)/hbm_connectivity.cfg \
+		--report_dir $(REPORT_DIR)/link \
 		-o $@ $^
 	@echo "XCLBIN generated at: $@"
 
 $(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp
 	@echo "Compiling kernel $<..."
 	@mkdir -p $(@D)
-	$(VPP) -c -t hw --platform $(PLATFORM) \
+	$(VPP) $(VPP_FLAGS) -c \
 		-k $(basename $(notdir $<)) \
-		-I$(KERNEL_DIR) \
+		-I$(INCLUDE_DIR)/kernel \
+		--report_dir $(REPORT_DIR)/compile_$(basename $(notdir $<)) \
 		-o $@ $<
 
-# --- 主机程序编译规则 ---
-$(BUILD_DIR)/$(HOST_EXEC): $(HOST_OBJS)
-	@echo "Building host program..."
-	$(GCC) -std=c++11 \
+# --- Host Program ---
+$(HOST_EXE): $(HOST_OBJS)
+	@echo "Linking host program..."
+	$(GXX) -std=c++11 \
+		-I$(INCLUDE_DIR)/host \
 		-I$(XILINX_XRT)/include \
-		-I$(XILINX_XRT)/include/CL \
 		-L$(XILINX_XRT)/lib \
 		$^ -o $@ $(CLFLAGS)
 	@echo "Host executable: $@"
 
 $(BUILD_DIR)/%.o: $(HOST_DIR)/%.cpp
 	@mkdir -p $(@D)
-	$(GCC) -std=c++11 \
+	$(GXX) -std=c++11 \
+		-I$(INCLUDE_DIR)/host \
 		-I$(XILINX_XRT)/include \
-		-I$(XILINX_XRT)/include/CL \
-		-I$(HOST_DIR) \
 		-c $< -o $@
 
-# --- 实用目标 ---
-run: $(BUILD_DIR)/$(HOST_EXEC) $(BUILD_DIR)/$(XCLBIN_NAME)
-	@echo "Running program..."
-	@cd $(BUILD_DIR) && ./$(HOST_EXEC) $(XCLBIN_NAME)
-
+# --- Utilities ---
 clean:
 	@echo "Cleaning build files..."
-	@rm -rf $(BUILD_DIR)
-	@rm -f *.log *.jou
+	@rm -rf $(BUILD_DIR) $(REPORT_DIR)
+	@find . -name "*.log" -delete
+	@find . -name "*.jou" -delete
 
-# --- 依赖检查 ---
+distclean: clean
+	@rm -rf .Xil vivado* *.str
+
+# --- Environment Checks ---
 check_env:
-	@which $(VPP) >/dev/null || (echo "Error: Vitis (v++) not found!"; exit 1)
-	@which $(GCC) >/dev/null || (echo "Error: GCC not found!"; exit 1)
-	@test -d $(XILINX_XRT) || (echo "Error: XILINX_XRT not set!"; exit 1)
+	@which $(VPP) >/dev/null || (echo "[ERROR] Vitis (v++) not found!"; exit 1)
+	@test -d $(XILINX_XRT) || (echo "[ERROR] XILINX_XRT not set!"; exit 1)
+	@echo "Environment check passed."
 
-.PHONY: all clean run check_env
+# --- Dependencies ---
+$(KERNEL_OBJS): $(INCLUDE_DIR)/kernel/utils.h
+$(HOST_OBJS): $(INCLUDE_DIR)/host/utils.h
+
+.PHONY: all xclbin host run clean distclean check_env

@@ -1,5 +1,5 @@
-#ifndef _KERNEL_UTILS_H_
-#define _KERNEL_UTILS_H_
+#ifndef KERNEL_UTILS_H
+#define KERNEL_UTILS_H
 
 #include <ap_int.h>
 #include <hls_stream.h>

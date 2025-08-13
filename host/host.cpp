@@ -1,6 +1,6 @@
+#include "../include/host/utils.h"
 #include "task_scheduler.h"
 #include <iostream>
-#include "utils.h"
 #include <CL/cl2.hpp>
 #include <CL/cl_ext_xilinx.h>
 int main() {
