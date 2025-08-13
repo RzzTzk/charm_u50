@@ -4,14 +4,14 @@
             "type": "large",
             "tile": [256, 256, 128],
             "dsp": 3072,
-            "hbm_channels": 16,
+            "hbm_channels": {"start": 0, "count": 16},
             "slr": 0
         },
         {
             "type": "small",
             "tile": [64, 64, 64],
             "dsp": 512,
-            "hbm_channels": 8,
+            "hbm_channels": {"start": 24, "count": 8},
             "slr": 1
         }
     ]
