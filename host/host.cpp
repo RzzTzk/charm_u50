@@ -1,6 +1,7 @@
 #include "task_scheduler.h"
 #include <iostream>
-#include "xcl2.hpp"
+#include <CL/cl2.hpp>
+#include <CL/cl_ext_xilinx.h>
 int main() {
     try {
         // 初始化OpenCL
