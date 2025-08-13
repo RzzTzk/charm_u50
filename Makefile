@@ -43,6 +43,8 @@ run: $(HOST_EXE) $(XCLBIN)
 	@echo "Running program..."
 	@cd $(BUILD_DIR) && ./$(notdir $(HOST_EXE)) $(notdir $(XCLBIN))
 
+codegen:
+	python scripts/generate_hls.py --config design_space/acc_config.json
 # --- XCLBIN Generation ---
 $(XCLBIN): $(KERNEL_OBJS)
 	@echo "Linking XCLBIN..."
@@ -53,7 +55,7 @@ $(XCLBIN): $(KERNEL_OBJS)
 		-o $@ $^
 	@echo "XCLBIN generated at: $@"
 
-$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp
+$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp | codegen
 	@echo "Compiling kernel $<..."
 	@mkdir -p $(@D)
 	$(VPP) $(VPP_FLAGS) -c \
