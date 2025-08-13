@@ -1,3 +1,24 @@
-host/utils.h:44:43: error: no matching function for call to ‘std::vector<std::vector<unsigned char, std::allocator<unsigned char> >, std::allocator<std::vector<unsigned char, std::allocator<unsigned char> > > >::vector(<brace-enclosed initializer list>)’
-   44 |     cl::Program::Binaries bins{{buf, size}};
+host/task_scheduler.h: In member function ‘void TaskScheduler::runTask(const string&, int, int, int)’:
+host/task_scheduler.h:55:26: warning: ‘cl_int cl::CommandQueue::enqueueTask(const cl::Kernel&, cl::vector<cl::Event>*, cl::Event*) const’ is deprecated [-Wdeprecated-declarations]
+   55 |         queue.enqueueTask(config.kernel);
+      |         ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+In file included from /usr/include/CL/cl2.hpp:17,
+                 from host/task_scheduler.h:4,
+                 from host/host.cpp:1:
+/usr/include/CL/opencl.hpp:8588:50: note: declared here
+ 8588 |     CL_API_PREFIX__VERSION_1_2_DEPRECATED cl_int enqueueTask(
+      |                                                  ^~~~~~~~~~~
+In file included from host/utils.h:5,
+                 from host/host.cpp:3:
+/usr/include/CL/cl2.hpp: At global scope:
+/usr/include/CL/cl2.hpp:18:151: note: ‘#pragma message: cl2.hpp has been renamed to opencl.hpp to make it clear that it supports all versions of OpenCL. Please include opencl.hpp directly.’
+   18 |  supports all versions of OpenCL. Please include opencl.hpp directly.")
+      |                                                                       ^
 
+In file included from host/host.cpp:4:
+/usr/include/CL/cl2.hpp:18:151: note: ‘#pragma message: cl2.hpp has been renamed to opencl.hpp to make it clear that it supports all versions of OpenCL. Please include opencl.hpp directly.’
+   18 |  supports all versions of OpenCL. Please include opencl.hpp directly.")
+      |                                                                       ^
+
+/usr/bin/ld: cannot open output file host: Is a directory
+collect2: error: ld returned 1 exit status
