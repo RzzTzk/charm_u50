@@ -1,6 +1,10 @@
 {
     "files.associations": {
         "vector": "cpp",
-        "error_msg": "cpp"
+        "error_msg": "cpp",
+        "array": "cpp",
+        "string_view": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }

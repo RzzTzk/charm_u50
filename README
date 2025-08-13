@@ -5,7 +5,15 @@ python generate_hls.py --config design_space/acc_config.json
 cd scripts && vivado -mode batch -source build.tcl
 
 # 步骤3：编译主机程序
-g++ -std=c++11 -I$XILINX_XRT/include host/host.cpp -o host -L$XILINX_XRT/lib -lOpenCL
+g++ -std=c++11 \
+    -I$XILINX_XRT/include \
+    -I$XILINX_XRT/include/CL \
+    host/host.cpp host/task_scheduler.cpp \
+    -o host_executable \
+    -L$XILINX_XRT/lib \
+    -lOpenCL -lxrt_core
 
 # 步骤4：运行测试
 ./host design_space/tasks.json
+
+rm -f host_executable *.o
