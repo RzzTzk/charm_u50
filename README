@@ -11,14 +11,14 @@ cd /path/to/your/project
 rm -f *.xo *.xclbin
 
 # 编译内核（示例命令，需根据实际修改）
-v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_202210_1 \
+v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 \
     -k mm_large -o mm_large.xo kernels/mm_large.cpp
 
-v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_202210_1 \
+v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 \
     -k mm_small -o mm_small.xo kernels/mm_small.cpp
 
 # 链接生成xclbin
-v++ -l -t hw --platform xilinx_u50_gen3x16_xdma_202210_1 \
+v++ -l -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 \
     --config scripts/hbm_connectivity.cfg \
     -o mm_accel.xclbin mm_large.xo mm_small.xo
 
