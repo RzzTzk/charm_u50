@@ -28,8 +28,3 @@ foreach kernel $kernel_list {
         close $fd
     }
 }
-
-# 链接生成xclbin
-v++ -l -t hw --platform xilinx_u50_gen3x16_xdma_201920_3 \
-    --config scripts/hbm_connectivity.cfg \
-    -o mm_accel.xclbin mm_large.xo mm_small.xo
