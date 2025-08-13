@@ -1,0 +1,6 @@
+host/host.cpp:8:29: error: ‘get_xilinx_device’ was not declared in this scope
+    8 |         cl::Device device = get_xilinx_device();
+      |                             ^~~~~~~~~~~~~~~~~
+host/host.cpp:10:31: error: ‘load_xclbin’ was not declared in this scope
+   10 |         cl::Program program = load_xclbin(context, "mm_accel.xclbin");
+   
