@@ -1,6 +1,3 @@
-host/host.cpp:8:29: error: ‘get_xilinx_device’ was not declared in this scope
-    8 |         cl::Device device = get_xilinx_device();
-      |                             ^~~~~~~~~~~~~~~~~
-host/host.cpp:10:31: error: ‘load_xclbin’ was not declared in this scope
-   10 |         cl::Program program = load_xclbin(context, "mm_accel.xclbin");
-   
+host/utils.h:44:43: error: no matching function for call to ‘std::vector<std::vector<unsigned char, std::allocator<unsigned char> >, std::allocator<std::vector<unsigned char, std::allocator<unsigned char> > > >::vector(<brace-enclosed initializer list>)’
+   44 |     cl::Program::Binaries bins{{buf, size}};
+

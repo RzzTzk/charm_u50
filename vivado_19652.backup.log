@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Wed Aug 13 13:18:40 2025
-# Process ID: 20365
+# Start of session at: Wed Aug 13 12:43:28 2025
+# Process ID: 19652
 # Current directory: /home/wanqi/Wanqi/project/charm_u50
 # Command line: vivado -mode batch -source scripts/build.tcl
 # Log file: /home/wanqi/Wanqi/project/charm_u50/vivado.log
@@ -13,13 +13,13 @@
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 22.04.5 LTS
 # Processor Detail  :Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
-# CPU Frequency     :800.000 MHz
+# CPU Frequency     :4098.281 MHz
 # CPU Physical cores:4
 # CPU Logical cores :8
 # Host memory       :33534 MB
 # Swap memory       :12884 MB
 # Total Virtual     :46419 MB
-# Available Virtual :40332 MB
+# Available Virtual :40534 MB
 #-----------------------------------------------------------
 WARNING: [Common 17-1271] The MYVIVADO environment variable specifies an invalid location '/opt/Xilinx/Vitis/2022.2_patch000034848/'
 Sourcing tcl script '/home/wanqi/.Xilinx/Vivado/2024.1/Vivado_init.tcl'
@@ -67,4 +67,4 @@ invalid command name "v++"
     # 综合内核
     v++ -t hw --pla..."
     (file "scripts/build.tcl" line 6)
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 13 13:18:42 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug 13 12:43:31 2025...
