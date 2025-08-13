@@ -36,3 +36,6 @@ int main() {
     }
     return 0;
 }
+
+// # 编译（添加XRT扩展头文件路径）
+// g++ -std=c++11 -I$XILINX_XRT/include -I$XILINX_XRT/include/CL host/*.cpp -o host -L$XILINX_XRT/lib -lOpenCL -lxrt_core
