@@ -7,11 +7,9 @@
 #include <fstream>
 #include <stdexcept>
 
-// 声明函数
 cl::Device get_xilinx_device();
 cl::Program load_xclbin(cl::Context& context, const std::string& xclbin_path);
 
-// 实现函数
 inline cl::Device get_xilinx_device() {
     std::vector<cl::Platform> platforms;
     cl::Platform::get(&platforms);
@@ -35,17 +33,17 @@ inline cl::Program load_xclbin(cl::Context& context, const std::string& xclbin_p
         throw std::runtime_error("Failed to open xclbin file: " + xclbin_path);
     }
     
+    // 读取二进制文件
     bin_file.seekg(0, bin_file.end);
     size_t size = bin_file.tellg();
     bin_file.seekg(0, bin_file.beg);
-    char* buf = new char[size];
-    bin_file.read(buf, size);
+    std::vector<unsigned char> bin_data(size);
+    bin_file.read(reinterpret_cast<char*>(bin_data.data()), size);
     
-    cl::Program::Binaries bins{{buf, size}};
-    cl::Program program(context, {context.getInfo<CL_CONTEXT_DEVICES>()[0]}, bins);
-    delete[] buf;
-    
-    return program;
+    // 创建Program对象
+    cl::Program::Binaries binaries{bin_data};
+    auto devices = context.getInfo<CL_CONTEXT_DEVICES>();
+    return cl::Program(context, devices, binaries);
 }
 
 #endif
