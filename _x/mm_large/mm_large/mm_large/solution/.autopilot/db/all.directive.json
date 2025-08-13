@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "mm_large",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "mm_large"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large.tcl",
+    "sourceLine": 23,
+    "success": false
+  }
+]

@@ -1,0 +1,235 @@
+<ENTRY>
+{
+ "thisFile": "/home/wanqi/Wanqi/project/charm_u50/mm_small.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Aug 13 13:45:31 2025",
+ "timestampMillis": "1755085531940",
+ "buildStep": {
+  "cmdId": "3279bbe8-a2a7-44a5-b8f9-2b2d2bdc0076",
+  "name": "v++",
+  "logFile": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small.steps.log",
+  "commandLine": "/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 -k mm_small -o mm_small.xo kernels/mm_small.cpp ",
+  "args": [
+   "-c",
+   "-t",
+   "hw",
+   "--platform",
+   "xilinx_u50_gen3x16_xdma_5_202210_1",
+   "-k",
+   "mm_small",
+   "-o",
+   "mm_small.xo",
+   "kernels/mm_small.cpp"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wanqi/Wanqi/project/charm_u50"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Aug 13 13:45:31 2025",
+ "timestampMillis": "1755085531940",
+ "status": {
+  "cmdId": "3279bbe8-a2a7-44a5-b8f9-2b2d2bdc0076",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Aug 13 13:45:35 2025",
+ "timestampMillis": "1755085535210",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
+  "hardwareDsa": "",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u50_gen3x16_xdma_5_202210_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "mm_small",
+     "file": "/home/wanqi/Wanqi/project/charm_u50/mm_small.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/wanqi/Wanqi/project/charm_u50/kernels/mm_small.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2024.1. SW Build 5074859 on 2024-05-20-23:21:20"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Aug 13 13:45:35 2025",
+ "timestampMillis": "1755085535212",
+ "buildStep": {
+  "cmdId": "389ace59-c4c6-4f0d-b4c0-830ed79ebc70",
+  "name": "vitis_hls",
+  "logFile": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/mm_small.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/mm_small.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/wanqi/Wanqi/project/charm_u50"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Aug 13 13:45:35 2025",
+ "timestampMillis": "1755085535212",
+ "status": {
+  "cmdId": "389ace59-c4c6-4f0d-b4c0-830ed79ebc70",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Aug 13 13:46:12 2025",
+ "timestampMillis": "1755085572992",
+ "status": {
+  "cmdId": "389ace59-c4c6-4f0d-b4c0-830ed79ebc70",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573017",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/mm_small/solution/.autopilot/db/mm_small.design.xml",
+  "name": "mm_small",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_REPORT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573018",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/mm_small/solution/.autopilot/db/.message_syn.xml",
+  "name": "mm_small",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_DRC_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573018",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/reports/mm_small/hls_reports/mm_small_csynth.rpt",
+  "name": "mm_small",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573019",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_small/mm_small/mm_small/solution/syn/report/mm_small_csynth.xml",
+  "name": "mm_small",
+  "fileType": "XML",
+  "reportType": "KERNEL_HLS_CSYNTH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573023",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/reports/mm_small/system_estimate_mm_small.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573887",
+ "status": {
+  "cmdId": "3279bbe8-a2a7-44a5-b8f9-2b2d2bdc0076",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573948",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/reports/mm_small/v++_compile_mm_small_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Aug 13 13:46:13 2025",
+ "timestampMillis": "1755085573948",
+ "report": {
+  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/v++_compile_mm_small_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: mm_large
+Log file: /home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/vitis_hls.log
