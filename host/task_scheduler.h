@@ -1,7 +1,8 @@
 #pragma once
 #include <vector>
 #include <map>
-#include "xcl2.hpp"
+#include <CL/cl2.hpp>
+#include <CL/cl_ext_xilinx.h>
 
 class TaskScheduler {
 public:
