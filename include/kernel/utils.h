@@ -13,6 +13,7 @@ void read_block(const T* src, T dst[DIM1][DIM2], int rows, int cols, int ld) {
             dst[i][j] = src[i*ld + j];
         }
     }
+    static_assert(DIM1 >= rows && DIM2 >= cols, "Dimensions mismatch");
 }
 
 template<typename T, int DIM1, int DIM2>
@@ -24,6 +25,7 @@ void write_block(T* dst, const T src[DIM1][DIM2], int rows, int cols, int ld) {
             dst[i*ld + j] = src[i][j];
         }
     }
+    static_assert(DIM1 >= rows && DIM2 >= cols, "Dimensions mismatch");
 }
 
 #endif
