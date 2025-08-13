@@ -4,6 +4,24 @@ python generate_hls.py --config design_space/acc_config.json
 # 步骤2：编译硬件
 cd scripts && vivado -mode batch -source build.tcl
 
+# 进入你的项目目录
+cd /path/to/your/project
+
+# 清理旧文件（可选）
+rm -f *.xo *.xclbin
+
+# 编译内核（示例命令，需根据实际修改）
+v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_201920_3 \
+    -k mm_large -o mm_large.xo kernels/mm_large.cpp
+
+v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_201920_3 \
+    -k mm_small -o mm_small.xo kernels/mm_small.cpp
+
+# 链接生成xclbin
+v++ -l -t hw --platform xilinx_u50_gen3x16_xdma_201920_3 \
+    --config scripts/hbm_connectivity.cfg \
+    -o mm_accel.xclbin mm_large.xo mm_small.xo
+
 # 步骤3：编译主机程序
 g++ -std=c++11 \
     -I$XILINX_XRT/include \
