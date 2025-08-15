@@ -1,0 +1,81 @@
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:1316:7: warning: Added loop label VITIS_LOOP_1223_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1223_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:1316:7: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2290:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2290:5: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2304:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2304:5: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2318:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:2318:5: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:3947:7: warning: Added loop label VITIS_LOOP_1247_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1247_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:3947:7: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5856:2: warning: Added loop label VITIS_LOOP_10_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < rows; i++) {
+ ^~~
+ VITIS_LOOP_10_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5856:2: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5858:2: warning: Added loop label VITIS_LOOP_12_2:   [xilinx-label-all-loops]
+ for (int j = 0; j < cols; j++) {
+ ^~~
+ VITIS_LOOP_12_2: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5858:2: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5868:2: warning: Added loop label VITIS_LOOP_22_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < rows; i++) {
+ ^~~
+ VITIS_LOOP_22_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5868:2: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5870:2: warning: Added loop label VITIS_LOOP_24_2:   [xilinx-label-all-loops]
+ for (int j = 0; j < cols; j++) {
+ ^~~
+ VITIS_LOOP_24_2: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5870:2: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5907:48: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=local_A type=ram_2p impl=uram
+                                               ^
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5908:48: error: Invalid Directive: for current device, ram_2p + uram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=local_B type=ram_2p impl=uram
+                                               ^
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5912:2: warning: Added loop label VITIS_LOOP_35_1:   [xilinx-label-all-loops]
+ for (int ti = 0; ti < M; ti += 256) {
+ ^~~
+ VITIS_LOOP_35_1: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5912:2: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5913:9: warning: Added loop label VITIS_LOOP_36_2:   [xilinx-label-all-loops]
+        for (int tj = 0; tj < N; tj += 256) {
+        ^~~
+        VITIS_LOOP_36_2: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5913:9: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5918:13: warning: Added loop label VITIS_LOOP_41_3:   [xilinx-label-all-loops]
+            for (int tk = 0; tk < K; tk += 128) {
+            ^~~
+            VITIS_LOOP_41_3: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5918:13: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5919:17: warning: Added loop label VITIS_LOOP_42_4:   [xilinx-label-all-loops]
+                for (int i = 0; i < 256; i++) {
+                ^~~
+                VITIS_LOOP_42_4: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5919:17: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5920:21: warning: Added loop label VITIS_LOOP_43_5:   [xilinx-label-all-loops]
+                    for (int j = 0; j < 256; j++) {
+                    ^~~
+                    VITIS_LOOP_43_5: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5920:21: note: FIX-IT applied suggested code changes
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5923:25: warning: Added loop label VITIS_LOOP_46_6:   [xilinx-label-all-loops]
+                        for (int k = 0; k < 128; k++) {
+                        ^~~
+                        VITIS_LOOP_46_6: 
+/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp:5923:25: note: FIX-IT applied suggested code changes

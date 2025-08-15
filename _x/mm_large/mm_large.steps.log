@@ -9,7 +9,7 @@
 Environment variables :
 ------------------------------------------
 SHELL=/bin/bash
-SESSION_MANAGER=local/seat10:@/tmp/.ICE-unix/2430,unix/seat10:/tmp/.ICE-unix/2430
+SESSION_MANAGER=local/seat10:@/tmp/.ICE-unix/2316,unix/seat10:/tmp/.ICE-unix/2316
 QT_ACCESSIBILITY=1
 COLORTERM=truecolor
 XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg
@@ -19,7 +19,7 @@ GTK_IM_MODULE=ibus
 RDI_APPROOT=/opt/Xilinx/Vitis/2024.1
 RDI_JAVA_PLATFORM=
 LANGUAGE=en_US:en
-MAKE_TERMOUT=/dev/pts/2
+MAKE_TERMOUT=/dev/pts/0
 XIL_SUPPRESS_OVERRIDE_WARNINGS=1
 RDI_BINROOT=/opt/Xilinx/Vitis/2024.1/bin
 LC_ADDRESS=de_DE.UTF-8
@@ -35,8 +35,8 @@ RDI_PATCHROOT=
 DESKTOP_SESSION=ubuntu
 LC_MONETARY=de_DE.UTF-8
 XILINX_XRT=/opt/xilinx/xrt
-XILINX_PATH=/opt/Xilinx/Vitis/2022.2_patch000034848/:
 GTK_MODULES=gail:atk-bridge
+DBUS_STARTER_BUS_TYPE=session
 XIL_NO_OVERRIDE=0
 RDI_LIBDIR=/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu/22:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o
 PWD=/home/wanqi/Wanqi/project/charm_u50
@@ -45,7 +45,7 @@ LOGNAME=wanqi
 XDG_SESSION_TYPE=x11
 _RDI_DONT_SET_XILINX_AS_PATH=True
 GPG_AGENT_INFO=/run/user/1002/gnupg/S.gpg-agent:0:1
-SYSTEMD_EXEC_PID=18896
+SYSTEMD_EXEC_PID=2316
 XAUTHORITY=/run/user/1002/gdm/Xauthority
 RDI_PREPEND_PATH=/opt/Xilinx/Vitis/2024.1/bin
 XILINX_DSP=
@@ -61,10 +61,10 @@ VTE_VERSION=6800
 XILINX_HLS=/opt/Xilinx/Vitis_HLS/2024.1
 HDI_PROCESSOR=x86_64
 RDI_BUILD=yes
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/e0b1ac81_4ec9_4216_aa16_ce183c481cc2
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4313f6f2_197f_41ec_8cc5_c8f10c4ae5a3
 XILINXD_LICENSE_FILE=2100@141.76.92.90
 RDI_PROG=/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++
-RDI_SESSION_INFO=/home/wanqi/Wanqi/project/charm_u50:seat10_1755086572_22588
+RDI_SESSION_INFO=/home/wanqi/Wanqi/project/charm_u50:seat10_1755250562_5406
 RT_TCL_PATH=/opt/Xilinx/Vitis/2024.1/scripts/rt/base_tcl/tcl
 MFLAGS=
 XILINX_SDK=/opt/Xilinx/Vitis/2024.1
@@ -77,9 +77,9 @@ TERM=xterm-256color
 LC_IDENTIFICATION=de_DE.UTF-8
 LESSOPEN=| /usr/bin/lesspipe %s
 USER=wanqi
-MAKE_TERMERR=/dev/pts/2
+MAKE_TERMERR=/dev/pts/0
 XILINX_PLANAHEAD=/opt/Xilinx/Vitis/2024.1
-GNOME_TERMINAL_SERVICE=:1.153
+GNOME_TERMINAL_SERVICE=:1.89
 RDI_BASEROOT=/opt/Xilinx/Vitis
 RDI_TPS_ROOT=/opt/Xilinx/Vivado/2024.1/tps/lnx64
 RDI_JAVA_VERSION=21.0.1_12
@@ -92,6 +92,7 @@ QT_IM_MODULE=ibus
 LC_MEASUREMENT=de_DE.UTF-8
 XILINX_VIVADO_HLS=/opt/Xilinx/Vivado/2024.1
 XIL_CHECK_TCL_DEBUG=False
+DBUS_STARTER_ADDRESS=unix:path=/run/user/1002/bus,guid=97b7c2883608099042a138e3689ef2af
 LD_LIBRARY_PATH=/opt/Xilinx/Vitis/2024.1/tps/lnx64/java-cef-95.0.4638.69/bin/lib/linux64:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu/22:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o:/opt/Xilinx/Vitis/2024.1/tps/lnx64/jre21.0.1_12/lib/:/opt/Xilinx/Vitis/2024.1/tps/lnx64/jre21.0.1_12/lib//server:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu/22:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o:/opt/xilinx/xrt/lib:/opt/Xilinx/Vitis/2024.1/bin/../lnx64/tools/dot/lib
 HDIPRELDPATH=/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu/22:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o/Ubuntu:/opt/Xilinx/Vitis/2024.1/lib/lnx64.o:/opt/xilinx/xrt/lib:/opt/Xilinx/Vitis/2024.1/bin/../lnx64/tools/dot/lib
 XDG_RUNTIME_DIR=/run/user/1002
@@ -104,7 +105,7 @@ PATH=/opt/Xilinx/Vivado/2024.1/tps/lnx64/binutils-2.26/bin:/opt/Xilinx/Vitis/202
 RT_LIBPATH=/opt/Xilinx/Vitis/2024.1/scripts/rt/data
 GDMSESSION=ubuntu
 HDI_APPROOT=/opt/Xilinx/Vitis/2024.1
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1002/bus
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1002/bus,guid=97b7c2883608099042a138e3689ef2af
 RDI_PLATFORM=lnx64
 MYVIVADO=
 ISL_IOSTREAMS_RSA=/opt/Xilinx/Vitis/2024.1/tps/isl
@@ -112,31 +113,35 @@ LC_NUMERIC=de_DE.UTF-8
 XILINX_VITIS=/opt/Xilinx/Vitis/2024.1
 OLDPWD=/opt/Xilinx/Vitis/2024.1/bin
 _=/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++
-XILINX_CD_CONNECT_ID=38579
-XILINX_CD_SESSION=66db35c9-81a9-4e8c-abd3-1acaccdca408
+XILINX_CD_CONNECT_ID=32801
+XILINX_CD_SESSION=aaf1c939-7895-4b1e-bada-c97054d0b3d4
 
 
 V++ command line:
 ------------------------------------------
-/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++ -c -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 -k mm_large -Ikernels -o build/mm_large.xo kernels/mm_large.cpp 
+/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++ -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 --save-temps -c -k mm_large -Iinclude/kernel --report_dir reports/compile_mm_large -o build/mm_large.xo kernels/mm_large.cpp 
 
 FINAL PROGRAM OPTIONS
 --compile
---include kernels
+--include include/kernel
 --input_files kernels/mm_large.cpp
 --kernel mm_large
 --optimize 0
 --output build/mm_large.xo
 --platform xilinx_u50_gen3x16_xdma_5_202210_1
+--report_dir reports/compile_mm_large
 --report_level 0
+--save-temps
 --target hw
 
 PARSED COMMAND LINE OPTIONS
--c 
 -t hw 
 --platform xilinx_u50_gen3x16_xdma_5_202210_1 
+--save-temps 
+-c 
 -k mm_large 
--Ikernels 
+-Iinclude/kernel 
+--report_dir reports/compile_mm_large 
 -o build/mm_large.xo 
 kernels/mm_large.cpp 
 
@@ -150,10 +155,4 @@ FINAL PLATFORM PATH
 
 ==========================================
 new:  steps log generated by v++ for new launch 
-timestamp: 13 Aug 2025 14:02:59
-------------------------------------------
-step: performing high-level synthesis for kernel:mm_large
-timestamp: 13 Aug 2025 14:03:05
-launch dir: /home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large
-cmd: vitis_hls -f /home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large.tcl -messageDb vitis_hls.pb
-V++ internal step status: fail
+timestamp: 15 Aug 2025 11:36:09

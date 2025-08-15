@@ -1,0 +1,19 @@
+<pragmas>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="21" pragmaType="inline" parentfunction="write_block" off="0" region="0" recursive="0"/>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="23" pragmaType="pipeline" parentfunction="write_block" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="9" pragmaType="inline" parentfunction="read_block" off="0" region="0" recursive="0"/>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="11" pragmaType="pipeline" parentfunction="read_block" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="9" pragmaType="inline" parentfunction="read_block" off="0" region="0" recursive="0"/>
+<pragma file="../../../kernels/../include/kernel/utils.h" line="11" pragmaType="pipeline" parentfunction="read_block" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../../../kernels/mm_large.cpp" line="21" pragmaType="dataflow" parentfunction="mm_large" disable_start_propagation="0"/>
+<pragma file="../../../kernels/mm_large.cpp" line="37" pragmaType="loop_flatten" parentfunction="mm_large" off="0"/>
+<pragma file="../../../kernels/mm_large.cpp" line="44" pragmaType="pipeline" parentfunction="mm_large" off="0" ii="1" rewind="0" style=""/>
+<pragma file="../../../kernels/mm_large.cpp" line="16" pragmaType="interface" parentfunction="mm_large" mode="m_axi" port="A" bundle="gmem0" offset="slave" name="" depth="-1" num_read_outstanding="32" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="../../../kernels/mm_large.cpp" line="17" pragmaType="interface" parentfunction="mm_large" mode="m_axi" port="B" bundle="gmem1" offset="slave" name="" depth="-1" num_read_outstanding="32" num_write_outstanding="-1" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="../../../kernels/mm_large.cpp" line="18" pragmaType="interface" parentfunction="mm_large" mode="m_axi" port="C" bundle="gmem0" offset="slave" name="" depth="-1" num_read_outstanding="-1" num_write_outstanding="32" max_burst_read_length="-1" max_burst_write_length="-1" latency="-1" max_widen_bitwidth="-1" channel=""/>
+<pragma file="../../../kernels/mm_large.cpp" line="19" pragmaType="interface" parentfunction="mm_large" mode="s_axilite" port="" bundle="" offset="-1" name="" clock="" impl="" register="0"/>
+<pragma file="../../../kernels/mm_large.cpp" line="28" pragmaType="array_partition" parentfunction="mm_large" dim="1" factor="32" mode="cyclic" dynamic="0" variable="local_A"/>
+<pragma file="../../../kernels/mm_large.cpp" line="29" pragmaType="array_partition" parentfunction="mm_large" dim="2" factor="32" mode="cyclic" dynamic="0" variable="local_B"/>
+<pragma file="../../../kernels/mm_large.cpp" line="30" pragmaType="bind_storage" parentfunction="mm_large" op="666" impl="24" latency="-1" variable="local_A"/>
+<pragma file="../../../kernels/mm_large.cpp" line="31" pragmaType="bind_storage" parentfunction="mm_large" op="666" impl="24" latency="-1" variable="local_B"/>
+</pragmas>

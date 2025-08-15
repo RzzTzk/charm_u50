@@ -1,0 +1,8 @@
+---
+MainSourceFile:  /home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large/solution/.autopilot/db/mm_large.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-warning
+    Message:         '[xlx-df-check-11] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region'
+    FileOffset:      '21:9'
+    FilePath:        ../../../kernels/mm_large.cpp
+...

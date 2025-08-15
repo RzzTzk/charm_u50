@@ -5,27 +5,3 @@ Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 ==============================================================
-INFO: [HLS 200-1505] Using flow_target 'vitis'
-INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
-INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
-INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
-INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
-INFO: [HLS 200-1510] Running: set_part xcu50-fsvh2104-2-e 
-INFO: [HLS 200-1611] Setting target device to 'xcu50-fsvh2104-2-e'
-INFO: [HLS 200-1510] Running: create_clock -period 300.000000MHz -name default 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
-INFO: [HLS 200-1510] Running: config_dataflow -strict_mode warning 
-INFO: [HLS 200-1510] Running: config_rtl -deadlock_detection sim 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_conservative_mode=1 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_addr64 
-INFO: [HLS 200-1510] Running: config_interface -m_axi_auto_max_ports=0 
-INFO: [HLS 200-1510] Running: config_export -format xo -ipname mm_large 
-INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 261.918 MB.
-INFO: [HLS 200-10] Analyzing design file '../../../kernels/mm_large.cpp' ... 
-ERROR: [HLS 207-3339] no matching function for call to 'read_block' (../../../kernels/mm_large.cpp:40:2)
-INFO: [HLS 207-4400] candidate template ignored: couldn't infer template argument 'DIM1' (/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h:8:6)
-ERROR: [HLS 207-3339] no matching function for call to 'read_block' (../../../kernels/mm_large.cpp:41:13)
-ERROR: [HLS 207-3339] no matching function for call to 'write_block' (../../../kernels/mm_large.cpp:55:13)
-INFO: [HLS 207-4400] candidate template ignored: couldn't infer template argument 'DIM1' (/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h:18:6)
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:00; Allocated memory: 1.734 MB.

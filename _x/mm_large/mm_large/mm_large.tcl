@@ -6,7 +6,7 @@ catch {::common::set_param -quiet hls.xocc.mode csynth};
 open_project mm_large
 set_top mm_large
 # v++ -g, -D, -I, --advanced.prop kernel.mm_large.kernel_flags
-add_files "/home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp" -cflags " -I /home/wanqi/Wanqi/project/charm_u50/kernels"
+add_files "/home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp" -cflags " -I /home/wanqi/Wanqi/project/charm_u50/include/kernel"
 open_solution -flow_target vitis solution
 set_part xcu50-fsvh2104-2-e
 create_clock -period 300.000000MHz -name default

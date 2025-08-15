@@ -8,9 +8,9 @@
 
 extern "C" {
 void mm_large(
-    const float* A,  // HBM通道0-7
-    const float* B,  // HBM通道8-15
-    float* C,        // 复用A的通道
+    const float* A,  // HBMchannel 0-7
+    const float* B,  // HBMchannel 8-15
+    float* C,        // Reuse A channels
     int M, int K, int N
 ) {
     #pragma HLS INTERFACE m_axi port=A offset=slave bundle=gmem0 num_read_outstanding=32
@@ -21,7 +21,6 @@ void mm_large(
     #pragma HLS DATAFLOW
     
 
-    // 本地缓存配置
     float local_A[TILE_M][TILE_K];
     float local_B[TILE_K][TILE_N];
     float local_C[TILE_M][TILE_N] = {0};
@@ -31,9 +30,8 @@ void mm_large(
     #pragma HLS BIND_STORAGE variable=local_A type=ram_2p impl=uram
     #pragma HLS BIND_STORAGE variable=local_B type=ram_2p impl=uram
 
-    // 计算逻辑
     
-    // 大矩阵分块计算
+    // large matrix block calculation
     for (int ti = 0; ti < M; ti += TILE_M) {
         for (int tj = 0; tj < N; tj += TILE_N) {
             #pragma HLS LOOP_FLATTEN

@@ -1,18 +1,52 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="" msg_id="207-3339" msg_severity="ERROR" msg_loc="../../../kernels/mm_large.cpp:40:2" msg_body="no matching function for call to 'read_block'">
-        <args/>
+    <msg msg_groups="PRAGMA_DATAFLOW" msg_id="214-114" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:21:9" msg_body="Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region"/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/../include/kernel/utils.h:9:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_block" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="" msg_id="207-4400" msg_severity="INFO" msg_loc="/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h:8:6" msg_body="candidate template ignored: couldn't infer template argument 'DIM1'">
-        <args/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/../include/kernel/utils.h:11:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="read_block" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="" msg_id="207-3339" msg_severity="ERROR" msg_loc="../../../kernels/mm_large.cpp:41:13" msg_body="no matching function for call to 'read_block'">
-        <args/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/../include/kernel/utils.h:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_block" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="" msg_id="207-3339" msg_severity="ERROR" msg_loc="../../../kernels/mm_large.cpp:55:13" msg_body="no matching function for call to 'write_block'">
-        <args/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/../include/kernel/utils.h:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="write_block" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="" msg_id="207-4400" msg_severity="INFO" msg_loc="/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h:18:6" msg_body="candidate template ignored: couldn't infer template argument 'DIM1'">
-        <args/>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large.tcl:23:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=mm_large" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=A offset=slave bundle=gmem0 num_read_outstanding=32" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=B offset=slave bundle=gmem1 num_read_outstanding=32" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=C offset=slave bundle=gmem0 num_write_outstanding=32" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:21:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaType="dataflow" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:28:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_A cyclic factor=32 dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:29:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_B cyclic factor=32 dim=2" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:30:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_A type=ram_2p impl=uram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=local_B type=ram_2p impl=uram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:37:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaType="loop_flatten" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../../../kernels/mm_large.cpp:44:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="mm_large" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
 </xilinx:hls_fe_msgs>
 

@@ -55,7 +55,7 @@ $(XCLBIN): $(KERNEL_OBJS)
 		-o $@ $^
 	@echo "XCLBIN generated at: $@"
 
-$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp | codegen
+$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp 
 	@echo "Compiling kernel $<..."
 	@mkdir -p $(@D)
 	$(VPP) $(VPP_FLAGS) -c \

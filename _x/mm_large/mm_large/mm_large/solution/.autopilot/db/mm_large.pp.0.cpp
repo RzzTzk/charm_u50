@@ -154,7 +154,7 @@ extern "C" {
 # 2 "<built-in>" 2
 # 1 "../../../kernels/mm_large.cpp" 2
 
-# 1 "/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h" 1
+# 1 "../../../kernels/../include/kernel/utils.h" 1
 
 
 
@@ -1313,7 +1313,7 @@ struct ap_int_base : public ssdm_int<_AP_W, _AP_S> {
       int NZeros = 0;
       int i = 0;
       bool hitNonZero = false;
-      for (i = 0; i < __N - 1; ++i) {
+      VITIS_LOOP_1223_1: for (i = 0; i < __N - 1; ++i) {
         ap_int_base<64, false> t;
         t.V = ({ typename _ap_type::remove_const<typeof(this->V)>::type __Result__ = 0; typeof(this->V) __Val2__ = this->V; __builtin_bit_part_select((void*)(&__Result__), (void*)(&__Val2__), _AP_W - i * 64 - 64, _AP_W - i * 64 - 1); __Result__; });
         NZeros += hitNonZero ? 0 : (t.V == 0 ? 64 : __builtin_clzll(t.V));
@@ -2287,7 +2287,7 @@ struct ap_range_ref {
     bool reverse = l_index > h_index;
     unsigned low = reverse ? h_index : l_index;
     unsigned high = reverse ? l_index : h_index;
-    for (unsigned i = low; i != high; ++i) {
+    VITIS_LOOP_676_1: for (unsigned i = low; i != high; ++i) {
 
 #pragma HLS unroll
 
@@ -2301,7 +2301,7 @@ struct ap_range_ref {
     bool reverse = l_index > h_index;
     unsigned low = reverse ? h_index : l_index;
     unsigned high = reverse ? l_index : h_index;
-    for (unsigned i = low; i != high; ++i) {
+    VITIS_LOOP_690_1: for (unsigned i = low; i != high; ++i) {
 
 #pragma HLS unroll
 
@@ -2315,7 +2315,7 @@ struct ap_range_ref {
     bool reverse = l_index > h_index;
     unsigned low = reverse ? h_index : l_index;
     unsigned high = reverse ? l_index : h_index;
-    for (unsigned i = low; i != high; ++i) {
+    VITIS_LOOP_704_1: for (unsigned i = low; i != high; ++i) {
 
 #pragma HLS unroll
 
@@ -3944,7 +3944,7 @@ struct ap_fixed_base : ssdm_int<_AP_W, _AP_S> {
       int NZeros = 0;
       int i = 0;
       bool hitNonZero = false;
-      for (i = 0; i < __N - 1; ++i) {
+      VITIS_LOOP_1247_1: for (i = 0; i < __N - 1; ++i) {
         ap_int_base<64, false> t;
         t.range(0, 63) = this->range(_AP_W - i * 64 - 64, _AP_W - i * 64 - 1);
         NZeros += hitNonZero ? 0 : (t.V == 0 ? 64 : __builtin_clzll(t.V));
@@ -5718,7 +5718,7 @@ inline __attribute__((nodebug)) bool operator!=(
 }
 # 366 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/ap_fixed.h" 2
 # 361 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/ap_int.h" 2
-# 5 "/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h" 2
+# 5 "../../../kernels/../include/kernel/utils.h" 2
 # 1 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/hls_stream.h" 1
 # 12 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/hls_stream.h"
 # 1 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/hls_stream_39.h" 1
@@ -5848,23 +5848,26 @@ class stream : public stream<__STREAM_T__, 0> {
 };
 }
 # 13 "/opt/Xilinx/Vitis_HLS/2024.1/common/technology/autopilot/hls_stream.h" 2
-# 6 "/home/wanqi/Wanqi/project/charm_u50/kernels/utils.h" 2
+# 6 "../../../kernels/../include/kernel/utils.h" 2
 
 template<typename T, int DIM1, int DIM2>
 void read_block(const T* src, T dst[DIM1][DIM2], int rows, int cols, int ld) {
-    for (int i = 0; i < rows; i++) {
+#pragma HLS INLINE
+ VITIS_LOOP_10_1: for (int i = 0; i < rows; i++) {
 #pragma HLS PIPELINE II=1
- for (int j = 0; j < cols; j++) {
+ VITIS_LOOP_12_2: for (int j = 0; j < cols; j++) {
             dst[i][j] = src[i*ld + j];
         }
     }
+
 }
 
 template<typename T, int DIM1, int DIM2>
 void write_block(T* dst, const T src[DIM1][DIM2], int rows, int cols, int ld) {
-    for (int i = 0; i < rows; i++) {
+#pragma HLS INLINE
+ VITIS_LOOP_22_1: for (int i = 0; i < rows; i++) {
 #pragma HLS PIPELINE II=1
- for (int j = 0; j < cols; j++) {
+ VITIS_LOOP_24_2: for (int j = 0; j < cols; j++) {
             dst[i*ld + j] = src[i][j];
         }
     }
@@ -5877,19 +5880,22 @@ void write_block(T* dst, const T src[DIM1][DIM2], int rows, int cols, int ld) {
 
 
 extern "C" {
-void mm_large(
+__attribute__((sdx_kernel("mm_large", 0))) void mm_large(
     const float* A,
     const float* B,
     float* C,
     int M, int K, int N
 ) {
+#line 23 "/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large.tcl"
+#pragma HLSDIRECTIVE TOP name=mm_large
+# 15 "../../../kernels/mm_large.cpp"
+
 #pragma HLS INTERFACE m_axi port=A offset=slave bundle=gmem0 num_read_outstanding=32
 #pragma HLS INTERFACE m_axi port=B offset=slave bundle=gmem1 num_read_outstanding=32
 #pragma HLS INTERFACE m_axi port=C offset=slave bundle=gmem0 num_write_outstanding=32
 #pragma HLS INTERFACE s_axilite port=return
 
 #pragma HLS DATAFLOW
-
 
 
  float local_A[256][128];
@@ -5903,26 +5909,25 @@ void mm_large(
 
 
 
-
- for (int ti = 0; ti < M; ti += 256) {
-        for (int tj = 0; tj < N; tj += 256) {
+ VITIS_LOOP_35_1: for (int ti = 0; ti < M; ti += 256) {
+        VITIS_LOOP_36_2: for (int tj = 0; tj < N; tj += 256) {
 #pragma HLS LOOP_FLATTEN
- read_block(A + ti*K, local_A, 256, 128, K);
-            read_block(B + tj, local_B, 128, 256, N);
+ read_block<float, 256, 128>(A + ti*K, local_A, 256, 128, K);
+            read_block<float, 128, 256>(B + tj, local_B, 128, 256, N);
 
-            for (int tk = 0; tk < K; tk += 128) {
-                for (int i = 0; i < 256; i++) {
-                    for (int j = 0; j < 256; j++) {
+            VITIS_LOOP_41_3: for (int tk = 0; tk < K; tk += 128) {
+                VITIS_LOOP_42_4: for (int i = 0; i < 256; i++) {
+                    VITIS_LOOP_43_5: for (int j = 0; j < 256; j++) {
 #pragma HLS PIPELINE II=1
  float sum = local_C[i][j];
-                        for (int k = 0; k < 128; k++) {
+                        VITIS_LOOP_46_6: for (int k = 0; k < 128; k++) {
                             sum += local_A[i][k] * local_B[k][j];
                         }
                         local_C[i][j] = sum;
                     }
                 }
             }
-            write_block(C + ti*N + tj, local_C, 256, 256, N);
+            write_block<float, 256, 256>(C + ti*N + tj, local_C, 256, 256, N);
         }
     }
 

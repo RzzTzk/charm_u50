@@ -9,22 +9,25 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Wed Aug 13 14:02:56 2025",
- "timestampMillis": "1755086576029",
+ "dateTimestamp": "Fri Aug 15 11:36:06 2025",
+ "timestampMillis": "1755250566282",
  "buildStep": {
-  "cmdId": "c6476ca8-9705-43d2-9d15-16b1049faf6e",
+  "cmdId": "68891fa1-f161-4183-b4d9-642fe58c2aca",
   "name": "v++",
   "logFile": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large.steps.log",
-  "commandLine": "/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -c -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 -k mm_large -Ikernels -o build/mm_large.xo kernels/mm_large.cpp ",
+  "commandLine": "/opt/Xilinx/Vitis/2024.1/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw --platform xilinx_u50_gen3x16_xdma_5_202210_1 --save-temps -c -k mm_large -Iinclude/kernel --report_dir reports/compile_mm_large -o build/mm_large.xo kernels/mm_large.cpp ",
   "args": [
-   "-c",
    "-t",
    "hw",
    "--platform",
    "xilinx_u50_gen3x16_xdma_5_202210_1",
+   "--save-temps",
+   "-c",
    "-k",
    "mm_large",
-   "-Ikernels",
+   "-Iinclude/kernel",
+   "--report_dir",
+   "reports/compile_mm_large",
    "-o",
    "build/mm_large.xo",
    "kernels/mm_large.cpp"
@@ -37,10 +40,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Wed Aug 13 14:02:56 2025",
- "timestampMillis": "1755086576029",
+ "dateTimestamp": "Fri Aug 15 11:36:06 2025",
+ "timestampMillis": "1755250566282",
  "status": {
-  "cmdId": "c6476ca8-9705-43d2-9d15-16b1049faf6e",
+  "cmdId": "68891fa1-f161-4183-b4d9-642fe58c2aca",
   "state": "CS_RUNNING"
  }
 }
@@ -48,8 +51,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Wed Aug 13 14:02:59 2025",
- "timestampMillis": "1755086579281",
+ "dateTimestamp": "Fri Aug 15 11:36:09 2025",
+ "timestampMillis": "1755250569795",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u50_gen3x16_xdma_5_202210_1.xpfm",
   "hardwareDsa": "",
@@ -84,10 +87,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Wed Aug 13 14:02:59 2025",
- "timestampMillis": "1755086579282",
+ "dateTimestamp": "Fri Aug 15 11:36:09 2025",
+ "timestampMillis": "1755250569797",
  "buildStep": {
-  "cmdId": "9e4280e1-1b88-49d5-a601-29be26e0b7c8",
+  "cmdId": "f9ba5aa1-d2a9-46be-b0d6-98cb79ffab00",
   "name": "vitis_hls",
   "logFile": "/home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/vitis_hls.log",
   "commandLine": "vitis_hls -f /home/wanqi/Wanqi/project/charm_u50/_x/mm_large/mm_large/mm_large.tcl -messageDb vitis_hls.pb",
@@ -106,61 +109,11 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Wed Aug 13 14:02:59 2025",
- "timestampMillis": "1755086579283",
+ "dateTimestamp": "Fri Aug 15 11:36:09 2025",
+ "timestampMillis": "1755250569797",
  "status": {
-  "cmdId": "9e4280e1-1b88-49d5-a601-29be26e0b7c8",
+  "cmdId": "f9ba5aa1-d2a9-46be-b0d6-98cb79ffab00",
   "state": "CS_RUNNING"
- }
-}
-</ENTRY>
-<ENTRY>
-{
- "type": "ET_Status",
- "dateTimestamp": "Wed Aug 13 14:03:05 2025",
- "timestampMillis": "1755086585070",
- "status": {
-  "cmdId": "9e4280e1-1b88-49d5-a601-29be26e0b7c8",
-  "state": "CS_FAILED"
- }
-}
-</ENTRY>
-<ENTRY>
-{
- "type": "ET_Status",
- "dateTimestamp": "Wed Aug 13 14:03:05 2025",
- "timestampMillis": "1755086585071",
- "status": {
-  "cmdId": "c6476ca8-9705-43d2-9d15-16b1049faf6e",
-  "state": "CS_FAILED"
- }
-}
-</ENTRY>
-<ENTRY>
-{
- "type": "ET_Report",
- "dateTimestamp": "Wed Aug 13 14:03:05 2025",
- "timestampMillis": "1755086585131",
- "report": {
-  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/reports/mm_large/v++_compile_mm_large_guidance.html",
-  "name": "",
-  "fileType": "HTML",
-  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
-  "cmdId": ""
- }
-}
-</ENTRY>
-<ENTRY>
-{
- "type": "ET_Report",
- "dateTimestamp": "Wed Aug 13 14:03:05 2025",
- "timestampMillis": "1755086585132",
- "report": {
-  "path": "/home/wanqi/Wanqi/project/charm_u50/_x/v++_compile_mm_large_guidance.pb3",
-  "name": "",
-  "fileType": "BINARY_PROTOBUF",
-  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
-  "cmdId": ""
  }
 }
 </ENTRY>
