@@ -25,3 +25,201 @@ remark: ../../../kernels/../include/kernel/utils.h:22:46: Could not widen since 
 remark: ../../../kernels/../include/kernel/utils.h:13:25: Could not widen since type float size is greater than or equal to alignment 4(bytes) _XLX_SEP_ callreadscevgep12689seqB gmem1 mm_large 
 remark: ../../../kernels/../include/kernel/utils.h:13:25: Could not widen since type float size is greater than or equal to alignment 4(bytes) _XLX_SEP_ callreadscevgepseqA gmem0 mm_large 
 remark: automatically set the pipeline for Loop< unknown> at  
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_0 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_0 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_0' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_1 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_1 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_1' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_10 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_10 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_10' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_11 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_11 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_11' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_12 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_12 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_12' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_13 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_13 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_13' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_14 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_14 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_14' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_15 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_15 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_15' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_16 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_16 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_16' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_17 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_17 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_17' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_18 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_18 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_18' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_19 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_19 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_19' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_2 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_2 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_2' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_20 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_20 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_20' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_21 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_21 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_21' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_22 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_22 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_22' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_23 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_23 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_23' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_24 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_24 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_24' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_25 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_25 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_25' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_26 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_26 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_26' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_27 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_27 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_27' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_28 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_28 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_28' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_29 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_29 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_29' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_3 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_3 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_3' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_30 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_30 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_30' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_31 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_31 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_31' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_4 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_4 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_4' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_5 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_5 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_5' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_6 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_6 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_6' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_7 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_7 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_7' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_8 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_8 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_8' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: array_partition dim=2 type=complete  variable=local_A_9 1 mm_large ../../../kernels/mm_large.cpp:24:8 local_A_9 
+remark: ../../../kernels/mm_large.cpp:24:8: Inferring pragma 'array_partition type=complete dim=2' for array 'local_A_9' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_0 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_0 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_0' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_1 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_1 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_1' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_10 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_10 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_10' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_11 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_11 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_11' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_12 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_12 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_12' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_13 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_13 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_13' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_14 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_14 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_14' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_15 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_15 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_15' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_16 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_16 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_16' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_17 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_17 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_17' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_18 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_18 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_18' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_19 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_19 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_19' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_2 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_2 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_2' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_20 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_20 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_20' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_21 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_21 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_21' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_22 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_22 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_22' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_23 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_23 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_23' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_24 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_24 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_24' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_25 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_25 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_25' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_26 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_26 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_26' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_27 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_27 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_27' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_28 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_28 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_28' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_29 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_29 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_29' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_3 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_3 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_3' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_30 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_30 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_30' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_31 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_31 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_31' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_4 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_4 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_4' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_5 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_5 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_5' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_6 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_6 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_6' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_7 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_7 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_7' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_8 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_8 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_8' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:25:11: array_partition dim=1 type=complete  variable=local_B_9 1 mm_large ../../../kernels/mm_large.cpp:25:11 local_B_9 
+remark: ../../../kernels/mm_large.cpp:25:11: Inferring pragma 'array_partition type=complete dim=1' for array 'local_B_9' due to pipeline pragma
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_0': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_1': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_2': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_3': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_4': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_5': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_6': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_7': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_8': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_9': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_10': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_11': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_12': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_13': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_14': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_15': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_16': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_17': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_18': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_19': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_20': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_21': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_22': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_23': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_24': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_25': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_26': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_27': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_28': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_29': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_30': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:24:8: Applying array_partition to 'local_A_31': Complete partitioning on dimension 2.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_0': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_1': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_2': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_3': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_4': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_5': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_6': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_7': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_8': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_9': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_10': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_11': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_12': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_13': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_14': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_15': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_16': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_17': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_18': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_19': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_20': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_21': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_22': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_23': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_24': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_25': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_26': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_27': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_28': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_29': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_30': Complete partitioning on dimension 1.
+remark: ../../../kernels/mm_large.cpp:25:11: Applying array_partition to 'local_B_31': Complete partitioning on dimension 1.
+remark: ../../../kernels/../include/kernel/utils.h:13:25: Multiple burst reads of length 128 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq gmem0 mm_large 
+remark: ../../../kernels/../include/kernel/utils.h:13:25: Multiple burst reads of length 128 and bit width 32 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: ../../../kernels/../include/kernel/utils.h:13:25: Multiple burst reads of length 256 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq1 gmem1 mm_large 
+remark: ../../../kernels/../include/kernel/utils.h:13:25: Multiple burst reads of length 256 and bit width 32 has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.
+remark: ../../../kernels/../include/kernel/utils.h:22:46: Multiple burst writes of length 256 and bit width 32 has been inferred. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. _XLX_SEP_ seq2 gmem0 mm_large 
+remark: ../../../kernels/../include/kernel/utils.h:22:46: Multiple burst writes of length 256 and bit width 32 has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.

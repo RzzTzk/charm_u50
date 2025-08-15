@@ -1,41 +1,44 @@
 <design_size title="Design Size Report">
-    <item name="C-Synthesis has not completed!">
-        <item name="Performance"/>
-        <item name="HW Transforms"/>
-    </item>
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">,    214, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">,       214, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,  5361, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,  5340, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,  4707, user inline pragmas are applied</column>
-            <column name="">(4) simplification,  4707, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,     5361, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,     5340, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,     4707, user inline pragmas are applied</column>
+            <column name="">(4) simplification,     4707, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition, 42643, user array partition pragmas are applied</column>
-            <column name="">(2) simplification, 29116, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate , 29116, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape, 29116, apply array reshape pragmas</column>
-            <column name="">(5) access patterns, 27217, array access pattern optmizations</column>
+            <column name="">(1) array partition,    42643, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,    29116, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,    29116, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,    29116, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,    27217, array access pattern optmizations</column>
             <column name="">, , </column>
-            <column name="Performance">, pending, After transformations are applied to meet performance pragma targets</column>
-            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,    27219, loop and instruction simplification</column>
+            <column name="">(2) parallelization,    27219, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 1747473 *, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,   153492 *, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">,   154148 *, After hardware transfomations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
-            <header size="5" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct"/>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="mm_large" col1="mm_large.cpp:10" col2="214" col3="4707" col4="27217">
-                    <row id="1" col0="read_block&lt;float, 256, 128&gt;" col1="utils.h:8" col2="29" col3="" col4=""/>
-                    <row id="3" col0="read_block&lt;float, 128, 256&gt;" col1="utils.h:8" col2="29" col3="" col4=""/>
-                    <row id="2" col0="write_block&lt;float, 256, 256&gt;" col1="utils.h:20" col2="29" col3="" col4=""/>
+                <row id="0" col0="mm_large" col1="mm_large.cpp:10" col2="214" col3="4707" col4="27217" col5="153492" col5_note="*" col6="154148" col6_note="*">
+                    <row id="1" col0="read_block&lt;float, 256, 128&gt;" col1="utils.h:8" col2="29" col3="" col4="" col5="" col6=""/>
+                    <row id="3" col0="read_block&lt;float, 128, 256&gt;" col1="utils.h:8" col2="29" col3="" col4="" col5="" col6=""/>
+                    <row id="2" col0="write_block&lt;float, 256, 256&gt;" col1="utils.h:20" col2="29" col3="" col4="" col5="" col6=""/>
                 </row>
             </rows>
-            <notes/>
+            <notes>
+                <note name="*" desc="Exceeded design size warning message threshold"/>
+            </notes>
         </hiertable>
     </item>
     <item name="Design Size Message Settings">
