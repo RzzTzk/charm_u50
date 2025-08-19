@@ -1,5 +1,5 @@
 # 步骤1：生成HLS代码（根据CDSE输出自动调整参数）
-python generate_hls.py --model models/bert.json --output design_space/acc_config.json
+python3 generate_hls.py --model models/bert.json --output design_space/acc_config.json
 
 # 步骤2：编译硬件
 cd scripts && vivado -mode batch -source build.tcl
