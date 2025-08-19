@@ -87,7 +87,7 @@ class CDSE:
         """Calculate required HBM channels"""
         # Each channel ~2GB/s, estimate based on data volume
         data_volume = (tile_m * tile_k + tile_k * tile_n) * 4  # bytes
-        return max(1, min(16, int(np.ceil(data_volume / (128 * 1024))))  # 128KB per channel
+        return max(1, min(16, int(np.ceil(data_volume / (128 * 1024)))))  # 128KB per channel
     
     def calculate_memory(self, tile_m, tile_n, tile_k):
         """Calculate memory requirements"""

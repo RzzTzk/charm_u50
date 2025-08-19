@@ -6,9 +6,9 @@
 
 extern "C" {
 void mm_small(
-    const float* A,  // HBM通道24-27
-    const float* B,  // HBM通道28-31
-    float* C,        // 复用A的通道
+    const float* A,  // HBMchannel 24-27
+    const float* B,  // HBMchannel 28-31
+    float* C,        // reuse A channels
     int M, int K, int N
 ) {
     #pragma HLS INTERFACE m_axi port=A offset=slave bundle=gmem1 num_read_outstanding=32
@@ -17,7 +17,6 @@ void mm_small(
     #pragma HLS INTERFACE s_axilite port=return
     
 
-    // 本地缓存配置
     float local_A[TILE_M][TILE_K];
     float local_B[TILE_K][TILE_N];
     float local_C[TILE_M][TILE_N] = {0};
@@ -27,9 +26,8 @@ void mm_small(
     #pragma HLS BIND_STORAGE variable=local_A type=ram_2p impl=bram
     #pragma HLS BIND_STORAGE variable=local_B type=ram_2p impl=bram
 
-    // 计算逻辑
     
-    // 小矩阵流式计算
+    // small matrix stream calculation
     hls::stream<float> a_stream("a_stream");
     hls::stream<float> b_stream("b_stream");
     

@@ -1,18 +1,25 @@
 {
-    "accelerators": [
-        {
-            "type": "large",
-            "tile": [256, 256, 128],
-            "dsp": 3072,
-            "hbm_channels": {"start": 0, "count": 16},
-            "slr": 0
-        },
-        {
-            "type": "small",
-            "tile": [64, 64, 64],
-            "dsp": 512,
-            "hbm_channels": {"start": 24, "count": 8},
-            "slr": 1
-        }
-    ]
+  "accelerators": [
+    {
+      "type": "large",
+      "tile": [
+        512,
+        512,
+        256
+      ],
+      "dsp": 5952,
+      "hbm_channels": {
+        "start": 0,
+        "count": 8
+      },
+      "throughput": 3571.2,
+      "efficiency": 0.9999999999999999,
+      "memory": {
+        "bram": 1024,
+        "uram": 256
+      }
+    }
+  ],
+  "model": "BERT",
+  "total_throughput": 3571.2
 }

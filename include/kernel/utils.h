@@ -13,7 +13,6 @@ void read_block(const T* src, T dst[DIM1][DIM2], int rows, int cols, int ld) {
             dst[i][j] = src[i*ld + j];
         }
     }
-
 }
 
 template<typename T, int DIM1, int DIM2>
