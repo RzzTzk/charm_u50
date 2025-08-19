@@ -3,23 +3,19 @@
     {
       "type": "large",
       "tile": [
-        512,
-        512,
-        256
+        256,
+        256,
+        128
       ],
-      "dsp": 5952,
+      "dsp": 2048,
       "hbm_channels": {
         "start": 0,
-        "count": 8
+        "count": 16
       },
-      "throughput": 3571.2,
-      "efficiency": 0.9999999999999999,
-      "memory": {
-        "bram": 1024,
-        "uram": 256
-      }
+      "throughput": 2500.0,
+      "efficiency": 0.85
     }
   ],
-  "model": "BERT",
-  "total_throughput": 3571.2
+  "model": "bert",
+  "total_throughput": 2500.0
 }

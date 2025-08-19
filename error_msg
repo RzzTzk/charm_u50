@@ -23,10 +23,17 @@ In file included from host/host.cpp:4:
 /usr/bin/ld: cannot open output file host: Is a directory
 collect2: error: ld returned 1 exit status
 
-Optimizing for model: models/bert.json
-Optimization completed in 0.00s
-Total throughput: 3571.20 GFLOPS
+=== CHARM Standalone HLS Code Generator ===
+✓ Generated /home/wanqi/Wanqi/project/charm_u50/include/kernel/utils.h
+Model analysis: 3 large layers, 0 small layers
+Operations: 16.12G (large), 0.00G (small)
+✓ Added large matrix accelerator
+✓ Generated accelerator config: design_space/acc_config.json
+✓ Generated /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
 
-=== Generating HLS Code ===
-  Generated /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
-Generated 1 accelerators
+=== Generation Complete ===
+Generated files:
+  - /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
+  - /home/wanqi/Wanqi/project/charm_u50/include/kernel/utils.h
+  - design_space/acc_config.json
+
