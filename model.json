@@ -1,0 +1,32 @@
+{
+  "name": "toy_transformer",
+  "layers": [
+    {
+      "type": "mm",
+      "M": 4096,
+      "K": 4096,
+      "N": 4096
+    },
+    {
+      "type": "mm",
+      "M": 1024,
+      "K": 1024,
+      "N": 1024
+    },
+    {
+      "type": "mm",
+      "M": 128,
+      "K": 128,
+      "N": 128
+    },
+    {
+      "type": "softmax"
+    },
+    {
+      "type": "layernorm"
+    },
+    {
+      "type": "transpose"
+    }
+  ]
+}

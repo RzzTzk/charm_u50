@@ -23,17 +23,8 @@ In file included from host/host.cpp:4:
 /usr/bin/ld: cannot open output file host: Is a directory
 collect2: error: ld returned 1 exit status
 
-=== CHARM Standalone HLS Code Generator ===
-✓ Generated /home/wanqi/Wanqi/project/charm_u50/include/kernel/utils.h
-Model analysis: 3 large layers, 0 small layers
-Operations: 16.12G (large), 0.00G (small)
-✓ Added large matrix accelerator
-✓ Generated accelerator config: design_space/acc_config.json
-✓ Generated /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
-
-=== Generation Complete ===
-Generated files:
-  - /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
-  - /home/wanqi/Wanqi/project/charm_u50/include/kernel/utils.h
-  - design_space/acc_config.json
+Model: toy_transformer
+Throughput (GFLOPS): 16000.0
+Acclerators:
+{'type': 'large', 'tile': '512x512x256', 'dsp': 8000, 'bram_blocks': 228, 'uram_blocks': 29, 'hbm_channels': {'start': 0, 'count': 1}, 'throughput_GFLOPS': 16000.0, 'efficiency': 1.0}
 
