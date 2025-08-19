@@ -22,3 +22,11 @@ In file included from host/host.cpp:4:
 
 /usr/bin/ld: cannot open output file host: Is a directory
 collect2: error: ld returned 1 exit status
+
+Optimizing for model: models/bert.json
+Optimization completed in 0.00s
+Total throughput: 3571.20 GFLOPS
+
+=== Generating HLS Code ===
+  Generated /home/wanqi/Wanqi/project/charm_u50/kernels/mm_large.cpp
+Generated 1 accelerators
