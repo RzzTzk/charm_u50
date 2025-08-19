@@ -5,15 +5,13 @@
 #include <CL/cl_ext_xilinx.h>
 int main() {
     try {
-        // 初始化OpenCL
+
         cl::Device device = get_xilinx_device();
         cl::Context context(device);
         cl::Program program = load_xclbin(context, "mm_accel.xclbin");
-        
-        // 初始化调度器（传入context）
+        ）
         TaskScheduler scheduler(context);
         
-        // 注册加速器内核
         scheduler.addKernel({
             "mm_large", 
             cl::Kernel(program, "mm_large"),
