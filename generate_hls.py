@@ -105,9 +105,6 @@ HARDWARE_CONSTRAINTS = {
 #         return ops / time_sec / 1e9  # GFLOPS
 
 
-import numpy as np
-import pandas as pd
-
 class CDSE:
     def __init__(self, hardware_constraints):
         """
