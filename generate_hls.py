@@ -12,7 +12,7 @@ from pathlib import Path
 from jinja2 import Template
 import argparse
 import time
-
+import pandas as pd
 # --- Configuration ---
 PROJECT_ROOT = Path(__file__).parent.resolve()
 KERNEL_DIR = PROJECT_ROOT / "kernels"
@@ -103,6 +103,7 @@ HARDWARE_CONSTRAINTS = {
 #         cycles = (M/tile_m) * (N/tile_n) * (K/tile_k) * (tile_m * tile_n * tile_k) / dsp_count
 #         time_sec = cycles / (self.constraints["dsp_frequency"] * 1e6)
 #         return ops / time_sec / 1e9  # GFLOPS
+
 
 
 class CDSE:
