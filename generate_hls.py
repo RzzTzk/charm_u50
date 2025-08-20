@@ -224,7 +224,8 @@ class CDAC:
         return {
             "accelerators": accelerators,
             "model": model["name"],
-            "total_throughput": sum(acc["throughput"] for acc in accelerators)
+            "total_throughput": sum(acc["throughput_GFLOPS"] for acc in accelerators)
+
         }
     
     def get_average_size(self, kernels):

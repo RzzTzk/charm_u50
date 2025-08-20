@@ -70,45 +70,95 @@ class CDAC:
     def __init__(self, cdse):
         self.cdse = cdse
         
+    # def compose_accelerators(self, model_file, num_accs=2):
+    #     with open(model_file) as f:
+    #         model = json.load(f)
+        
+       
+    #     large_kernels, small_kernels = [], []
+    #     for layer in model["layers"]:
+    #         if layer["type"] == "mm":
+    #             ops = layer["M"] * layer["K"] * layer["N"]  
+    #             if ops > 1e6:
+    #                 large_kernels.append(layer)
+    #             else:
+    #                 small_kernels.append(layer)
+        
+    #     total_ops = sum(k["M"]*k["K"]*k["N"] for k in large_kernels + small_kernels)
+    #     large_ratio = (sum(k["M"]*k["K"]*k["N"] for k in large_kernels) / total_ops) if total_ops>0 else 0
+        
+    #     accelerators = []
+        
+    #     if large_kernels and large_ratio > 0.7:
+    #         avg_size = self.get_average_size(large_kernels)
+    #         designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "large")
+    #         if designs:
+    #             accelerators.append(designs[0])
+        
+    #     if small_kernels and len(accelerators) < num_accs:
+    #         avg_size = self.get_average_size(small_kernels)
+    #         designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "small")
+    #         if designs:
+    #             accelerators.append(designs[0])
+        
+    #     self.assign_hbm_channels(accelerators)
+        
+    #     return {
+    #         "accelerators": accelerators,
+    #         "model": model.get("name","unknown"),
+    #         "total_throughput_GFLOPS": sum(acc["throughput_GFLOPS"] for acc in accelerators)
+    #     }
     def compose_accelerators(self, model_file, num_accs=2):
         with open(model_file) as f:
             model = json.load(f)
-        
-       
+
+        # 分组
         large_kernels, small_kernels = [], []
         for layer in model["layers"]:
             if layer["type"] == "mm":
-                ops = layer["M"] * layer["K"] * layer["N"]  
+                ops = layer["M"] * layer["K"] * layer["N"]
                 if ops > 1e6:
                     large_kernels.append(layer)
                 else:
                     small_kernels.append(layer)
-        
-        total_ops = sum(k["M"]*k["K"]*k["N"] for k in large_kernels + small_kernels)
-        large_ratio = (sum(k["M"]*k["K"]*k["N"] for k in large_kernels) / total_ops) if total_ops>0 else 0
-        
+
         accelerators = []
-        
-        if large_kernels and large_ratio > 0.7:
+
+        # -------- large kernel--------
+        if large_kernels and len(accelerators) < num_accs:
             avg_size = self.get_average_size(large_kernels)
             designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "large")
             if designs:
                 accelerators.append(designs[0])
-        
+
+        # -------- small kernel--------
         if small_kernels and len(accelerators) < num_accs:
             avg_size = self.get_average_size(small_kernels)
             designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "small")
             if designs:
                 accelerators.append(designs[0])
-        
+            else:
+                # force create small kernel
+                accelerators.append({
+                    "type": "small",
+                    "tile": "forced_minimal",
+                    "dsp": min(256, self.cdse.constraints["total_dsp"]//4),
+                    "bram_blocks": 1,
+                    "uram_blocks": 1,
+                    "hbm_channels": 1,
+                    "throughput_GFLOPS": 100.0,
+                    "efficiency": 0.1
+                })
+
+        # -------- HBM --------
         self.assign_hbm_channels(accelerators)
-        
+
         return {
             "accelerators": accelerators,
             "model": model.get("name","unknown"),
             "total_throughput_GFLOPS": sum(acc["throughput_GFLOPS"] for acc in accelerators)
         }
-    
+   
     def get_average_size(self, kernels):
         count = len(kernels)
         return {

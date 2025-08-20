@@ -55,7 +55,7 @@ $(XCLBIN): $(KERNEL_OBJS)
 		-o $@ $^
 	@echo "XCLBIN generated at: $@"
 
-$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp 
+$(BUILD_DIR)/%.xo: $(KERNEL_DIR)/%.cpp | codegen
 	@echo "Compiling kernel $<..."
 	@mkdir -p $(@D)
 	$(VPP) $(VPP_FLAGS) -c \
@@ -87,9 +87,7 @@ clean:
 	@rm -rf $(BUILD_DIR) $(REPORT_DIR)
 	@find . -name "*.log" -delete
 	@find . -name "*.jou" -delete
-
-distclean: clean
-	@rm -rf .Xil vivado* *.str
+5
 
 # --- Environment Checks ---
 check_env:
