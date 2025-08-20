@@ -1,12 +1,12 @@
 === CHARM CDSE-CDAC Optimization ===
 Optimizing for model: models/bert.json
 Traceback (most recent call last):
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 442, in <module>
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 447, in <module>
     main()
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 423, in main
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 428, in main
     acc_config = cdac.compose_accelerators(args.model, args.num_accs)
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 221, in compose_accelerators
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 222, in compose_accelerators
     self.assign_hbm_channels(accelerators)
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 241, in assign_hbm_channels
-    channels_needed = acc["hbm_channels"]["count"]
-TypeError: 'int' object is not subscriptable
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 247, in assign_hbm_channels
+    acc["hbm_channels"]["start"] = next_channel
+TypeError: 'int' object does not support item assignment

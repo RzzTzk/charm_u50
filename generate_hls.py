@@ -151,7 +151,8 @@ class CDSE:
     def calculate_hbm_channels(self, tile_m, tile_n, tile_k):
         data_volume = (tile_m * tile_k + tile_k * tile_n + tile_m * tile_n) * 4
         required_bw = data_volume * self.constraints["dsp_frequency"] / (tile_m * tile_n)
-        channels = int(math.ceil(required_bw / (self.constraints["hbm_bandwidth"]/self.constraints["total_hbm_channels"])))
+        channels = int(np.ceil(required_bw / (self.constraints["hbm_bandwidth"]/self.constraints["total_hbm_channels"])))
+        # channels = int(math.ceil(required_bw / (self.constraints["hbm_bandwidth"]/self.constraints["total_hbm_channels"])))
         return max(1, min(self.constraints["total_hbm_channels"], channels))
 
     def calculate_memory(self, tile_m, tile_n, tile_k):
