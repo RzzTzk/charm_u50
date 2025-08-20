@@ -7,7 +7,7 @@ Usage:
 
 import json
 import os
-import math
+import numpy as np
 from pathlib import Path
 from jinja2 import Template
 import argparse
@@ -27,6 +27,7 @@ HARDWARE_CONSTRAINTS = {
     "total_uram": 320,
     "total_hbm_channels": 32,
     "hbm_bandwidth": 460e9,  # GB/s
+    "hbm_bw_per_channel": 460e9 / 32,  # GB/s per channel
     "dsp_frequency": 300,    # MHz
 }
 
@@ -158,8 +159,8 @@ class CDSE:
         bram_bytes = (tile_m * tile_k + tile_k * tile_n) * 4
         uram_bytes = (tile_m * tile_n) * 4
         return {
-            "bram": int(math.ceil(bram_bytes / 4608)),   # BRAM=4.5KB
-            "uram": int(math.ceil(uram_bytes / 36864))  # URAM=36KB
+            "bram": int(np.ceil(bram_bytes / 4608)),   # BRAM=4.5KB
+            "uram": int(np.ceil(uram_bytes / 36864))  # URAM=36KB
         }
 
     def estimate_throughput(self, M, K, N, dsp_count):

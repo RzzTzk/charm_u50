@@ -47,15 +47,15 @@ class CDSE:
     def calculate_hbm_channels(self, tile_m, tile_n, tile_k):
         data_volume = (tile_m * tile_k + tile_k * tile_n + tile_m * tile_n) * 4
         required_bw = data_volume * self.constraints["dsp_frequency"] / (tile_m * tile_n)
-        channels = int(-(-required_bw // self.constraints["hbm_bw_per_channel"]))  # 使用整数除法向上取整替代np.ceil
+        channels = int(-(-required_bw // self.constraints["hbm_bw_per_channel"])) 
         return max(1, min(self.constraints["total_hbm_channels"], channels))
 
     def calculate_memory(self, tile_m, tile_n, tile_k):
         bram_bytes = (tile_m * tile_k + tile_k * tile_n) * 4
         uram_bytes = (tile_m * tile_n) * 4
         return {
-            "bram": int(-(-bram_bytes // 4608)),   # BRAM block 4.5KB，使用整数除法向上取整替代np.ceil
-            "uram": int(-(-uram_bytes // 36864))  # URAM block 36KB，使用整数除法向上取整替代np.ceil
+            "bram": int(-(-bram_bytes // 4608)),   # BRAM block 4.5KB，
+            "uram": int(-(-uram_bytes // 36864))  # URAM block 36KB，
         }
 
     def estimate_throughput(self, M, K, N, dsp_count):
@@ -129,9 +129,9 @@ class CDAC:
 toy_model = {
   "name": "toy_transformer",
   "layers": [
-    {"type": "mm", "M": 4096, "K": 4096, "N": 4096},   # Attention大矩阵
-    {"type": "mm", "M": 1024, "K": 1024, "N": 1024},   # FFN层
-    {"type": "mm", "M": 128, "K": 128, "N": 128},      # 小矩阵
+    {"type": "mm", "M": 4096, "K": 4096, "N": 4096},   # Attention
+    {"type": "mm", "M": 1024, "K": 1024, "N": 1024},   # FFN
+    {"type": "mm", "M": 128, "K": 128, "N": 128},      # 
     {"type": "softmax"},
     {"type": "layernorm"},
     {"type": "transpose"}
