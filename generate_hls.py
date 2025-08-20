@@ -244,7 +244,11 @@ class CDAC:
                 channels_needed = acc["hbm_channels"]["count"]
             else:
                 channels_needed = acc["hbm_channels"]            
-            acc["hbm_channels"]["start"] = next_channel
+            # acc["hbm_channels"]["start"] = next_channel
+            if isinstance(acc["hbm_channels"], int):
+                acc["hbm_channels"] = {"count": acc["hbm_channels"]}
+
+            acc["hbm_channels"]["start"] = next_channel            
             next_channel += channels_needed
 
 # --- HLS Code Generation ---
