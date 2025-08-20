@@ -5,10 +5,8 @@ Traceback (most recent call last):
     main()
   File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 423, in main
     acc_config = cdac.compose_accelerators(args.model, args.num_accs)
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 205, in compose_accelerators
-    designs = self.cdse.explore_design_space(
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 121, in explore_design_space
-    hbm_channels = self.calculate_hbm_channels(tile_m, tile_n, tile_k)
-  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 154, in calculate_hbm_channels
-    channels = int(math.ceil(required_bw / self.constraints["hbm_bw_per_channel"]))
-KeyError: 'hbm_bw_per_channel'
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 221, in compose_accelerators
+    self.assign_hbm_channels(accelerators)
+  File "/home/wanqi/Wanqi/project/charm_u50/generate_hls.py", line 241, in assign_hbm_channels
+    channels_needed = acc["hbm_channels"]["count"]
+TypeError: 'int' object is not subscriptable
