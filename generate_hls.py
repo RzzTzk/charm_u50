@@ -6,7 +6,6 @@ Usage:
 """
 
 import json
-import os
 import numpy as np
 from pathlib import Path
 from jinja2 import Template
@@ -239,7 +238,11 @@ class CDAC:
         """Assign HBM channels to avoid conflicts"""
         next_channel = 0
         for acc in accelerators:
-            channels_needed = acc["hbm_channels"]["count"]
+            # channels_needed = acc["hbm_channels"]["count"]
+            if isinstance(acc["hbm_channels"], dict):
+                channels_needed = acc["hbm_channels"]["count"]
+            else:
+                channels_needed = acc["hbm_channels"]            
             acc["hbm_channels"]["start"] = next_channel
             next_channel += channels_needed
 
