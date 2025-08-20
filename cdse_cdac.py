@@ -1,5 +1,4 @@
 import json
-import numpy as np
 
 
 class CDSE:
@@ -48,15 +47,15 @@ class CDSE:
     def calculate_hbm_channels(self, tile_m, tile_n, tile_k):
         data_volume = (tile_m * tile_k + tile_k * tile_n + tile_m * tile_n) * 4
         required_bw = data_volume * self.constraints["dsp_frequency"] / (tile_m * tile_n)
-        channels = int(np.ceil(required_bw / self.constraints["hbm_bw_per_channel"]))
+        channels = int(-(-required_bw // self.constraints["hbm_bw_per_channel"]))  # 使用整数除法向上取整替代np.ceil
         return max(1, min(self.constraints["total_hbm_channels"], channels))
 
     def calculate_memory(self, tile_m, tile_n, tile_k):
         bram_bytes = (tile_m * tile_k + tile_k * tile_n) * 4
         uram_bytes = (tile_m * tile_n) * 4
         return {
-            "bram": int(np.ceil(bram_bytes / 4608)),   # BRAM block 4.5KB
-            "uram": int(np.ceil(uram_bytes / 36864))  # URAM block 36KB
+            "bram": int(-(-bram_bytes // 4608)),   # BRAM block 4.5KB，使用整数除法向上取整替代np.ceil
+            "uram": int(-(-uram_bytes // 36864))  # URAM block 36KB，使用整数除法向上取整替代np.ceil
         }
 
     def estimate_throughput(self, M, K, N, dsp_count):
@@ -74,41 +73,41 @@ class CDAC:
     def compose_accelerators(self, model_file, num_accs=2):
         with open(model_file) as f:
             model = json.load(f)
-
+        
+       
         large_kernels, small_kernels = [], []
         for layer in model["layers"]:
             if layer["type"] == "mm":
-                ops = layer["M"] * layer["K"] * layer["N"]
+                ops = layer["M"] * layer["K"] * layer["N"]  
                 if ops > 1e6:
                     large_kernels.append(layer)
                 else:
                     small_kernels.append(layer)
-
+        
+        total_ops = sum(k["M"]*k["K"]*k["N"] for k in large_kernels + small_kernels)
+        large_ratio = (sum(k["M"]*k["K"]*k["N"] for k in large_kernels) / total_ops) if total_ops>0 else 0
+        
         accelerators = []
-
-        # 如果有大矩阵 → 分配一个大核
-        if large_kernels and len(accelerators) < num_accs:
+        
+        if large_kernels and large_ratio > 0.7:
             avg_size = self.get_average_size(large_kernels)
             designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "large")
             if designs:
                 accelerators.append(designs[0])
-
-        # 如果有小矩阵 → 分配一个小核
+        
         if small_kernels and len(accelerators) < num_accs:
             avg_size = self.get_average_size(small_kernels)
             designs = self.cdse.explore_design_space(avg_size["M"], avg_size["K"], avg_size["N"], "small")
             if designs:
                 accelerators.append(designs[0])
-
-        # HBM 分配
+        
         self.assign_hbm_channels(accelerators)
-
+        
         return {
             "accelerators": accelerators,
             "model": model.get("name","unknown"),
             "total_throughput_GFLOPS": sum(acc["throughput_GFLOPS"] for acc in accelerators)
         }
-
     
     def get_average_size(self, kernels):
         count = len(kernels)

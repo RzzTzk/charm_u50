@@ -7,7 +7,7 @@ Usage:
 
 import json
 import os
-import numpy as np
+import math
 from pathlib import Path
 from jinja2 import Template
 import argparse
@@ -151,15 +151,15 @@ class CDSE:
     def calculate_hbm_channels(self, tile_m, tile_n, tile_k):
         data_volume = (tile_m * tile_k + tile_k * tile_n + tile_m * tile_n) * 4
         required_bw = data_volume * self.constraints["dsp_frequency"] / (tile_m * tile_n)
-        channels = int(np.ceil(required_bw / self.constraints["hbm_bw_per_channel"]))
+        channels = int(math.ceil(required_bw / self.constraints["hbm_bw_per_channel"]))
         return max(1, min(self.constraints["total_hbm_channels"], channels))
 
     def calculate_memory(self, tile_m, tile_n, tile_k):
         bram_bytes = (tile_m * tile_k + tile_k * tile_n) * 4
         uram_bytes = (tile_m * tile_n) * 4
         return {
-            "bram": int(np.ceil(bram_bytes / 4608)),   # BRAM=4.5KB
-            "uram": int(np.ceil(uram_bytes / 36864))  # URAM=36KB
+            "bram": int(math.ceil(bram_bytes / 4608)),   # BRAM=4.5KB
+            "uram": int(math.ceil(uram_bytes / 36864))  # URAM=36KB
         }
 
     def estimate_throughput(self, M, K, N, dsp_count):
