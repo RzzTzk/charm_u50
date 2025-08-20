@@ -129,9 +129,9 @@ class CDAC:
 toy_model = {
   "name": "toy_transformer",
   "layers": [
-    {"type": "mm", "M": 4096, "K": 4096, "N": 4096},   # Attention大矩阵
-    {"type": "mm", "M": 1024, "K": 1024, "N": 1024},   # FFN层
-    {"type": "mm", "M": 128, "K": 128, "N": 128},      # 小矩阵
+    {"type": "mm", "M": 4096, "K": 4096, "N": 4096},   # Attention大矩�?
+    {"type": "mm", "M": 1024, "K": 1024, "N": 1024},   # FFN�?
+    {"type": "mm", "M": 128, "K": 128, "N": 128},      # 小矩�?
     {"type": "softmax"},
     {"type": "layernorm"},
     {"type": "transpose"}
